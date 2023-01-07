@@ -26,7 +26,6 @@
 #
 
 
-from sys import argv
 from os import path,listdir
 import numpy as np
 from scipy.special import gamma
@@ -43,55 +42,26 @@ rcParams['font.size'] = 16.0
 # 0 : Vacoas
 # 1 : MRT, Bras d'Eau
 # 2 : Réserve Tortues, Rodrigues
-# 3 : UoM FoA rooftop, Réduit
 #
 #
 stationIdx = 1
 
-#
-#  NOTE:
-#  First 2 strings describes weather station and location, 3rd string is the
-#  path to the data. 4th and 5th strings are keywords for the CSV data. 6th
-#  item is the bin size (in m/s) to use for the histogram.  Finally, the last
-#  string in each sublist is the mask to apply to each data series due to gaps
-#  in the collection.
-#
-IOSnet_stations = [[
-                    "Mauritius Meteorological Station",
-                    "Vacoas",
-                    "./Sample_data/IOS-net/Vacoas",
+
+IOSnet_stations = [["Vacoas",
+                    "Mauritius Meteorological Station, Vacoas",
+                    "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_IOSnet/Vacoas",
                     "WD_nf01_Avg",
-                    "WS_nf01_Avg",
-                    0.50,
-                    "(wind_df['timestamp'] < '2022-02-17 00:00:00') | ((wind_df['timestamp'] > '2022-03-09 23:59:00') & (wind_df['timestamp'] < '2022-05-29 00:00:00')) | (wind_df['timestamp'] > '2022-12-06 23:59:00')"
-                   ],
-                   [
-                     "MRT",
-                     "Bras d'Eau",
-                     "./Sample_data/IOS-net/Bras_dEau",
-                     "WD_mk01_Avg",
-                     "WS_mk01_Avg",
-                     0.20,
-                     "(wind_df['timestamp'] < '2020-03-19 00:00:00') | ((wind_df['timestamp'] > '2020-05-18 23:59:00') & (wind_df['timestamp'] < '2022-01-14 00:00:00')) | (wind_df['timestamp'] > '2022-05-17 23:59:00')"
-                   ],
-                   [
-                     "Reserves Tortues",
-                     "Rodrigues",
-                     "./Sample_data/IOS-net/Rodrigues",
-                     "WD_mo01_Avg",
-                     "WS_mo01_Avg",
-                     0.50,
-                     "(wind_df['timestamp'] < '2022-09-03 00:00:00') | (wind_df['timestamp'] > '2022-11-30 23:59:00')"
-                   ],
-                   [
-                     "Réduit",
-                     "UoM FoA rooftop, Réduit",
-                     "./Sample_data/IOS-net/Reduit",
-                     "WD_mp01_Avg",
-                     "WS_mp01_Avg",
-                     0.50,
-                     "(wind_df['timestamp'] > '2022-12-05 23:59:00')"
-                   ]]
+                    "WS_nf01_Avg"],
+                   ["MRT",
+                    "Bras d'Eau",
+                    "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_IOSnet/Bras_dEau",
+                    "WD_mk01_Avg",
+                    "WS_mk01_Avg"],
+                   ["Reserves Tortues",
+                    "Reserves Tortues, Rodrigues",
+                    "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_IOSnet/Rodrigues",
+                    "WD_mo01_Avg",
+                    "WS_mo01_Avg"]]
 
 
 
