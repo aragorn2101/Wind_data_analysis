@@ -8,6 +8,7 @@ We are sharing the scripts here hoping that it benefits the science. Python is h
 
 Below are short descriptions of the data sets. A few sample data files are given in the Sample_data directory in this repository.
 
+
 ## The IOS-net project data
 
 The Indian Ocean Solar network ([IOS-net](https://galilee.univ-reunion.fr)) project is a regional initiative, funded by the European Union, to establish a network of meteorological research and data sharing among the islands including and surround Reunion Island. The objectives of this project involve the assessment of renewable energy potential on the islands, the study of photovoltaic panels in their working environment, research on meteorological forecasting models for renewable energy applications, assessment of the impact of climate change on renewable resources, and adaptation to the impacts caused by climate change. The IOS-net project is also very valuable for the region as it encourages the sharing of information and collaboration between scientists and engineers of the Indian Ocean islands. An aspect of this initiative is the installation of weather stations on the islands and the sharing of the meteorological data freely via web services ([https://galilee.univ-reunion.fr/thredds/catalog.html](https://galilee.univ-reunion.fr/thredds/catalog.html)) and a mobile application.
@@ -15,4 +16,14 @@ The Indian Ocean Solar network ([IOS-net](https://galilee.univ-reunion.fr)) proj
 There are four IOS-net weather stations installed on the territory of the Republic of Mauritius.  Three are found in Mauritius with one in Rodrigues. The first one installed in Mauritius is found in Bras d'Eau, at the Mauritius Radio Telescope.  The second one is at Vacoas, in the compound of the Mauritius Meteorological Services.  The third one was installed in 2022 on the campus of the University of Mauritius. The latter is found on the roof of the UoM FoA building. All the data from every weather station is averaged over 1 minute.
 
 There are many other stations on the other Indian Ocean islands, on Reunion island, Madagascar and Seychelles. Check out the IOS-net website: [https://galilee.univ-reunion.fr](https://galilee.univ-reunion.fr) for more details.
+
+
+## Weather Underground
+
+Weather Underground is a platform conceived by a community of amateur meteorologists who place the free sharing of data at the centre of their activities. They operate an open access website: [https://www.wunderground.com](https://www.wunderground.com). Anybody who possesses a weather station can register into the database, connect their device and upload data automatically. The website then constitutes a centralized platform where the data collected by thousands of independent weather stations around the world can be accessed. The equipment and protocols are more or less standardized to ensure a minimum of data quality. There are many weather stations in Mauritius which are registered with Weather Underground. There are two such stations quite close to Réduit. The closest one is at Bout du Monde, Ebène (code IPLAIN36: [https://www.wunderground.com/dashboard/pws/IPLAIN36](https://www.wunderground.com/dashboard/pws/IPLAIN36)). And, the other one is found at Quatres-Bornes (code IPLAINEW2: [https://www.wunderground.com/dashboard/pws/IPLAINEW2](https://www.wunderground.com/dashboard/pws/IPLAINEW2)). The data obtained from the database are daily averages.
+
+
+## Meteostat: Plaisance
+
+Meteostat is a platform which regroups data from public domains. The difference with Weather Underground is that Meteostat's sources are institutions which strictly abide by the norms set by the World Meteorological Organization. These sources include the National Oceanic and Atmospheric Administration (NOAA) of the United States, the Deutscher Wetterdienst of Germany and meteorological data from European Data Portal among many other sources. The platform is accessible through the webpage: [https://meteostat.net](https://meteostat.net), where long term data can be obtained for thousands of stations around the world.  Meteostat has two registered data sources for Mauritius. One station is in Plaisance and the other one in Vacoas. The Vacoas station only has data available from 2021 whereas the Plaisance station has data available from 2018 to date. The wind speed data obtained from the database are daily averages. We used only the data from the Plaisance station so that we complemented the IOS-net and Weather Underground data.
 
