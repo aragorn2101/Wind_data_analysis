@@ -97,7 +97,7 @@ stationIdx = 3
 IOSnet_stations = [[
                     "Mauritius Meteorological Station",
                     "Vacoas",
-                    "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_IOSnet/Vacoas",
+                    "./Sample_data/IOSnet/Vacoas",
                     "WD_nf01_Avg",
                     "WS_nf01_Avg",
                     0.50,
@@ -106,7 +106,7 @@ IOSnet_stations = [[
                    [
                      "MRT",
                      "Bras d'Eau",
-                     "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_IOSnet/Bras_dEau",
+                     "./Sample_data/IOSnet/Bras_dEau",
                      "WD_mk01_Avg",
                      "WS_mk01_Avg",
                      0.20,
@@ -115,7 +115,7 @@ IOSnet_stations = [[
                    [
                      "Reserves Tortues",
                      "Rodrigues",
-                     "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_IOSnet/Rodrigues",
+                     "./Sample_data/IOSnet/Rodrigues",
                      "WD_mo01_Avg",
                      "WS_mo01_Avg",
                      0.50,
@@ -124,7 +124,7 @@ IOSnet_stations = [[
                    [
                      "Réduit",
                      "UoM FoA rooftop, Réduit",
-                     "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_IOSnet/Reduit",
+                     "./Sample_data/IOSnet/Reduit",
                      "WD_mp01_Avg",
                      "WS_mp01_Avg",
                      0.50,

@@ -69,17 +69,17 @@ stationIdx = 2
 
 IOSnet_stations = [["Vacoas",
                     "Mauritius Meteorological Station, Vacoas",
-                    "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_IOSnet/Vacoas",
+                    "./Sample_data/IOSnet/Vacoas",
                     "WD_nf01_Avg",
                     "WS_nf01_Avg"],
                    ["MRT",
                     "Bras d'Eau",
-                    "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_IOSnet/Bras_dEau",
+                    "./Sample_data/IOSnet/Bras_dEau",
                     "WD_mk01_Avg",
                     "WS_mk01_Avg"],
                    ["Reserves Tortues",
                     "Reserves Tortues, Rodrigues",
-                    "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_IOSnet/Rodrigues",
+                    "./Sample_data/IOSnet/Rodrigues",
                     "WD_mo01_Avg",
                     "WS_mo01_Avg"]]
 
