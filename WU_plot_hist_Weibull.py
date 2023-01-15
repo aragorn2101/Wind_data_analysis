@@ -61,12 +61,12 @@ stationIdx = 0
 
 WU_stations = [["IPLANEW2",
                 "Quatres Bornes",
-                "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_WU/Quatres-Bornes_IPLANEW2",
+                "./Sample_data/Weather_Underground/Quatres_Bornes_IPLAINEW2",
                 0.5
                ],
                ["IPLAIN36",
                 "Bout du Monde, Ebene",
-                "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_WU/Bout_du_Monde_IPLAIN36",
+                "./Sample_data/Weather_Underground/Ebene_IPLAIN36",
                 0.5
                ]]
 
