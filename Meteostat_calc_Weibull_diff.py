@@ -69,7 +69,7 @@ Weibull_P = []
 
 
 ###  Path for UoM Farm data files  ###
-DataPath = "/mnt/80_GiB_DATA/data/FARWIND_UoM/Data_Meteostat/20180101_-_20221231.csv"
+DataPath = "./Sample_data/Meteostat/Plaisance_20180101_-_20221231.csv"
 
 # Check if given path for weather station data is indeed a directory
 if not path.isfile(DataPath):
