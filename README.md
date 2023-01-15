@@ -10,18 +10,18 @@ We are sharing the scripts here hoping that it benefits the science. Python is h
 
 Firstly, the name of each script gives hints about the data sources and tasks performed. The first few letters/syllables of the script name define the data source which is concerned. The different terminologies are described below:
 
-__IOSnet :__ Indian Ocean Solar network project data.
-__Meteostat :__ data from Meteostat centralized platform for meteorological data.
-__UoM\_Farm :__ data from the Department of Physics weather station at University of Mauritius Farm.
-__WU :__ Weather Underground data from their world wide network of independent weather stations.
+__IOSnet :__ Indian Ocean Solar network project data. </br>
+__Meteostat :__ data from Meteostat centralized platform for meteorological data. </br>
+__UoM\_Farm :__ data from the Department of Physics weather station at University of Mauritius Farm. </br>
+__WU :__ Weather Underground data from their world wide network of independent weather stations. </br>
 
 _More details are given about the data sources in the next section below. A few sample data files are given in the __Sample\_data__ directory in this repository._
 
-The following words in the script name briefly describe the tasks which the latter performs.
-__...\_plot\_hist.py :__ script to plot the wind speed distribution histogram for the corresponding data source.
-__...\_plot\_hist\_Weibull.py :__ plots the Weibull curves (calculated using all the different parameter estimation methods), overlaid on the histogram. The histogram is scaled so that the area of each bar corresponds to the probability of the wind speed falling in the corresponding bin.
-__...\_plot\_yearly\_... :__ the script generates 1-year plots of the raw speed data. The data values are averaged over 2-day intervals for clear visualization.
-__...\_calc\_Weibull\_diff.py :__ this script calculates the Weibull approximations using the different parameter estimation methods. Then, the statistical difference between each curve obtained for every pair of parameters (k, c) is computed and printed out.
+The following words in the script name briefly describe the tasks which the latter performs. </br>
+__...\_plot\_hist.py :__ script to plot the wind speed distribution histogram for the corresponding data source. </br>
+__...\_plot\_hist\_Weibull.py :__ plots the Weibull curves (calculated using all the different parameter estimation methods), overlaid on the histogram. The histogram is scaled so that the area of each bar corresponds to the probability of the wind speed falling in the corresponding bin. </br>
+__...\_plot\_yearly\_... :__ the script generates 1-year plots of the raw speed data. The data values are averaged over 2-day intervals for clear visualization. </br>
+__...\_calc\_Weibull\_diff.py :__ this script calculates the Weibull approximations using the different parameter estimation methods. Then, the statistical difference between each curve obtained for every pair of parameters (k, c) is computed and printed out. </br>
 
 
 ## The IOS-net project data
