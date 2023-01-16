@@ -6,7 +6,7 @@ We had the project of installing a wind turbine on the campus of our university,
 
 We are sharing the scripts here hoping that it benefits the science. Python is hugely popular in data science, as is working with CSV files and dataframes. Firstly, the scripts serve as examples of how to work with CSV files and transforming to NumPy arrays. In a few places we also deal with missing data, NaN values and infinity in calculations. Secondly, there's the wind data analysis itself, with parameter estimation methods for the Weibull function. Finally, there's a bit of data visualization using Matplotlib.
 
-## Scripts
+## Script naming convention
 
 Firstly, the name of each script gives hints about the data sources and tasks performed. The first few letters/syllables of the script name define the data source which is concerned. The different terminologies are described below:
 
@@ -15,13 +15,17 @@ __Meteostat :__ data from Meteostat centralized platform for meteorological data
 __UoM\_Farm :__ data from the Department of Physics weather station at University of Mauritius Farm. </br>
 __WU :__ Weather Underground data from their world wide network of independent weather stations. </br>
 
-_More details are given about the data sources in the next section below. A few sample data files are given in the __Sample\_data__ directory in this repository._
+_More details are given about the data sources in the next section below. A few sample data files are given in the __Sample\_data__ directory in this repository.
 
-The following words in the script name briefly describe the tasks which the latter performs. </br>
-__...\_plot\_hist.py :__ script to plot the wind speed distribution histogram for the corresponding data source. </br>
-__...\_plot\_hist\_Weibull.py :__ plots the Weibull curves (calculated using all the different parameter estimation methods), overlaid on the histogram. The histogram is scaled so that the area of each bar corresponds to the probability of the wind speed falling in the corresponding bin. </br>
-__...\_plot\_yearly\_... :__ the script generates 1-year plots of the raw speed data. The data values are averaged over 2-day intervals for clear visualization. </br>
-__...\_calc\_Weibull\_diff.py :__ this script calculates the Weibull approximations using the different parameter estimation methods. Then, the statistical difference between each curve obtained for every pair of parameters (k, c) is computed and printed out. </br>
+The following words in the script name briefly describe the tasks which the latter performs.
+
+__...\_plot\_hist.py :__ script to plot the wind speed distribution histogram for the corresponding data source.
+
+__...\_plot\_hist\_Weibull.py :__ plots the Weibull curves (calculated using all the different parameter estimation methods), overlaid on the histogram. The histogram is scaled so that the area of each bar corresponds to the probability of the wind speed falling in the corresponding bin.
+
+__...\_plot\_yearly\_... :__ the script generates 1-year plots of the raw speed data. The data values are averaged over 2-day intervals for clear visualization.
+
+__...\_calc\_Weibull\_diff.py :__ this script calculates the Weibull approximations using the different parameter estimation methods. Then, the statistical difference between each curve obtained for every pair of parameters (k, c) is computed and printed out.
 
 
 ## The IOS-net project data
@@ -41,4 +45,28 @@ Weather Underground is a platform conceived by a community of amateur meteorolog
 ## Meteostat: Plaisance
 
 Meteostat is a platform which regroups data from public domains. The difference with Weather Underground is that Meteostat's sources are institutions which strictly abide by the norms set by the World Meteorological Organization. These sources include the National Oceanic and Atmospheric Administration (NOAA) of the United States, the Deutscher Wetterdienst of Germany and meteorological data from European Data Portal among many other sources. The platform is accessible through the webpage: [https://meteostat.net](https://meteostat.net), where long term data can be obtained for thousands of stations around the world.  Meteostat has two registered data sources for Mauritius. One station is in Plaisance and the other one in Vacoas. The Vacoas station only has data available from 2021 whereas the Plaisance station has data available from 2018 to date. The wind speed data obtained from the database are daily averages. We used only the data from the Plaisance station so that we complemented the IOS-net and Weather Underground data.
+
+
+## Parameter estimation techniques implemented for the Weibull approximations
+
+
+### Empirical method or standard deviation method (EMJ)
+
+The approximation for k is given by (Justus et al., 1978). This method is also known as the standard deviation method.
+
+$$   k ~=~ \Bigg( \frac{\sigma_U}{\bar{U}} \Bigg)^{-1.086} $$
+
+This gives good results for cases where k lies between 1 and 10 (Manwell et al., 2009). Then, c is found using the following equation,
+
+$$ c ~=~ \frac{ \bar{U} }{ \Gamma \left( 1 + 1/k \right) } $$
+
+
+_to be continued_
+
+
+## References
+
+Justus, C. G., Hargraves, W. R., Mikhail, A., & Graber, D. (1978). Methods for Estimating Wind Speed Frequency Distributions. Journal of Applied Meteorology (1962-1982), vol. 17, 3, pp. 350–353, URL: [http://www.jstor.org/stable/26178009](http://www.jstor.org/stable/26178009).
+
+Manwell, J. F., McGowan, J. G., & Rogers, A. L. (2009). Wind Energy Explained, 2nd Edition. John Wiley & Sons, Ltd., West Sussex, United Kingdom, ISBN 9781119994367, doi:10.1002/9781119994367, URL: [https://onlinelibrary.wiley.com/doi/book/10.1002/9781119994367](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119994367).
 
