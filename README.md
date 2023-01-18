@@ -76,7 +76,7 @@ $$ F(U) ~=~ 1 ~-~ \exp\left[ -\left(\frac{U}{c}\right)^{k} \right] $$
 
 Taking the logarithm of the cumulative distribution yields:
 
-$$ \ln \big{ -\ln \left[ 1 - F(U) \right] \big} ~=~ k\ln U ~-~ k\ln c $$
+$$ \ln \left\{ -\ln \left[ 1 - F(U) \right] \right\} ~=~ k\ln U ~-~ k\ln c $$
 
 By plotting $\ln \left[ 1 - F(U) \right]$ against $U$ using log-log scales (Rohatgi & Nelson, 1994), the gradient of the line provides a way to find parameter $k$, and $c$ is subsequently determined using the y-intercept. Least squares regression is used to perform the calculation to minimize errors (Trustum & Jayatilaka, 1979).
 
