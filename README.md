@@ -71,12 +71,14 @@ $$ \frac{c}{\bar{U}} ~=~ \Bigg( 0.568 ~+~ \frac{0.434}{k} \Bigg)^{ -\frac{1}{k} 
 ### Graphical method or least squares method (GM)
 
 The _cumulative probability distribution_ corresponding to a particular Weibull function, characterized by parameters $k$ and $c$, is
-
-$$ F(U) ~=~ 1 ~-~ \exp\left[ -\left(\frac{U}{c}\right)^{k} \right] $$
-
+```math
+  F(U) ~=~ 1 ~-~ \exp\left[ -\left(\frac{U}{c}\right)^{k} \right]
+```
 Taking the logarithm of the cumulative distribution yields:
 
-$$ \ln \left\{ -\ln \left[ 1 - F(U) \right] \right\} ~=~ k\ln U ~-~ k\ln c $$
+```math
+  \ln \left\{ -\ln \left[ 1 - F(U) \right] \right\} ~=~ k\ln U ~-~ k\ln c
+```
 
 By plotting $\ln \left[ 1 - F(U) \right]$ against $U$ using log-log scales (Rohatgi & Nelson, 1994), the gradient of the line provides a way to find parameter $k$, and $c$ is subsequently determined using the y-intercept. Least squares regression is used to perform the calculation to minimize errors (Trustum & Jayatilaka, 1979).
 
