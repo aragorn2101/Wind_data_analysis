@@ -12,20 +12,20 @@ Firstly, the name of each script gives hints about the data sources and tasks pe
 
 __IOSnet :__ Indian Ocean Solar network project data. </br>
 __Meteostat :__ data from Meteostat centralized platform for meteorological data. </br>
-__UoM\_Farm :__ data from the Department of Physics weather station at University of Mauritius Farm. </br>
+__UoM_Farm :__ data from the Department of Physics weather station at University of Mauritius Farm. </br>
 __WU :__ Weather Underground data from their world wide network of independent weather stations. </br>
 
 _More details are given about the data sources in the next section below. A few sample data files are given in the __Sample\_data__ directory in this repository.
 
 The following words in the script name briefly describe the tasks which the latter performs.
 
-__...\_plot\_hist.py :__ script to plot the wind speed distribution histogram for the corresponding data source.
+__ ..._plot_hist.py :__ script to plot the wind speed distribution histogram for the corresponding data source.
 
-__...\_plot\_hist\_Weibull.py :__ plots the Weibull curves (calculated using all the different parameter estimation methods), overlaid on the histogram. The histogram is scaled so that the area of each bar corresponds to the probability of the wind speed falling in the corresponding bin.
+__ ...\_plot\_hist\_Weibull.py :__ plots the Weibull curves (calculated using all the different parameter estimation methods), overlaid on the histogram. The histogram is scaled so that the area of each bar corresponds to the probability of the wind speed falling in the corresponding bin.
 
-__...\_plot\_yearly\_... :__ the script generates 1-year plots of the raw speed data. The data values are averaged over 2-day intervals for clear visualization.
+__ ...\_plot\_yearly\_... :__ the script generates 1-year plots of the raw speed data. The data values are averaged over 2-day intervals for clear visualization.
 
-__...\_calc\_Weibull\_diff.py :__ this script calculates the Weibull approximations using the different parameter estimation methods. Then, the statistical difference between each curve obtained for every pair of parameters (k, c) is computed and printed out.
+__ ...\_calc\_Weibull\_diff.py :__ this script calculates the Weibull approximations using the different parameter estimation methods. Then, the statistical difference between each curve obtained for every pair of parameters (k, c) is computed and printed out.
 
 
 ## The IOS-net project data
@@ -54,18 +54,24 @@ Meteostat is a platform which regroups data from public domains. The difference 
 
 The approximation for k is given by (Justus et al., 1978). This method is also known as the standard deviation method.
 
-$$ k ~=~ \Bigg( \frac{\sigma_U}{\bar{U}} \Bigg)^{-1.086} $$
+```math
+  k ~=~ \Bigg( \frac{\sigma_U}{\bar{U}} \Bigg)^{-1.086}
+```
 
 This gives good results for cases where k lies between 1 and 10 (Manwell et al., 2009). Then, c is found using the following equation,
 
-$$ c ~=~ \frac{ \bar{U} }{ \Gamma \left( 1 + 1/k \right) } $$
+```math
+  c ~=~ \frac{ \bar{U} }{ \Gamma \left( 1 + 1/k \right) }
+```
 
 
 ### Lysen empirical method (EML)
 
 In this empirical method $k$ is determined using the following equation, devised by Justus et al. (1978). Then, $c$ is calculated using an approximation for the gamma function giving rise to the following expression (Lysen, 1983):
 
-$$ \frac{c}{\bar{U}} ~=~ \Bigg( 0.568 ~+~ \frac{0.434}{k} \Bigg)^{ -\frac{1}{k} } $$
+```math
+  \frac{c}{\bar{U}} ~=~ \Bigg( 0.568 ~+~ \frac{0.434}{k} \Bigg)^{ -\frac{1}{k} }
+```
 
 
 ### Graphical method or least squares method (GM)
