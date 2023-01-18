@@ -82,7 +82,7 @@ Taking the logarithm of the cumulative distribution yields:
 
 By plotting $\ln \left[ 1 - F(U) \right]$ against $U$ using log-log scales (Rohatgi & Nelson, 1994), the gradient of the line provides a way to find parameter $k$, and $c$ is subsequently determined using the y-intercept. Least squares regression is used to perform the calculation to minimize errors (Trustum & Jayatilaka, 1979).
 
-It has often been shown that this method yields poor results. However, Deep et al. (2020) states that the poor results are due to a wrong definition of the cumulative probability density function. If $F(U_i)$ is actually the probability that a wind speed data value is less or equal to $U_i$, and $U_i$ is the value of wind speed at the upper edge (or middle value) of the histogram bar $i$. Then, we compare the linear relation $ y_i ~=~ \text{gradient}.x_i + \text{y-intercept} $, with the following equation.
+It has often been shown that this method yields poor results. However, Deep et al. (2020) states that the poor results are due to a wrong definition of the cumulative probability density function. If $F(U_i)$ is actually the probability that a wind speed data value is less or equal to $U_i$, and $U_i$ is the value of wind speed at the upper edge (or middle value) of the histogram bar $i$. Then, we compare the linear relation $y_i ~=~ \text{gradient}.x_i + \text{y-intercept}$, with the following equation.
 
 ```math
   \ln \left\{ -\ln \left[ 1 - F(U_i) \right] \right\} ~=~ k\ln U_i ~-~ k\ln c
@@ -90,9 +90,13 @@ It has often been shown that this method yields poor results. However, Deep et a
 
 Applying linear regression (Kenney & Keeping, 1962),
 
-$$ \text{gradient} ~=~ \frac{\sum_{i=1}^n x_i y_i ~-~ n\bar{x}\bar{y}}{\sum_{i=1}^n x_i^2 ~-~ n\bar{x}^2} $$
+```math
+  \text{gradient} ~=~ \frac{\sum_{i=1}^n x_i y_i ~-~ n\bar{x}\bar{y}}{\sum_{i=1}^n x_i^2 ~-~ n\bar{x}^2}
+```
 
-$$ \text{y-intercept} ~=~ \frac{\bar{y}\sum_{i=1}^n x_i^2 ~-~ \bar{x}\sum_{i=1}^n x_i y_i}{\sum_{i=1}^n x_i^2 ~-~ n\bar{x}^2} $$
+```math
+  \text{y-intercept} ~=~ \frac{\bar{y}\sum_{i=1}^n x_i^2 ~-~ \bar{x}\sum_{i=1}^n x_i y_i}{\sum_{i=1}^n x_i^2 ~-~ n\bar{x}^2}
+```
 
 
 _to be continued_
