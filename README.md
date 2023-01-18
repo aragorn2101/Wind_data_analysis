@@ -61,12 +61,51 @@ This gives good results for cases where k lies between 1 and 10 (Manwell et al.,
 $$ c ~=~ \frac{ \bar{U} }{ \Gamma \left( 1 + 1/k \right) } $$
 
 
+### Lysen empirical method (EML)
+
+In this empirical method $k$ is determined using the following equation, devised by Justus et al. (1978). Then, $c$ is calculated using an approximation for the gamma function giving rise to the following expression (Lysen, 1983):
+
+$$ \frac{c}{\bar{U}} ~=~ \Bigg( 0.568 ~+~ \frac{0.434}{k} \Bigg)^{ -\frac{1}{k} } $$
+
+
+### Graphical method or least squares method (GM)
+
+The _cumulative probability distribution_ function corresponding to a particular Weibull function, characterized by parameters $k$ and $c$, is
+$$ F(U) ~=~ 1 ~-~ \exp\left[ -\left(\frac{U}{c}\right)^{k} \right] $$
+
+Taking the logarithm of the cumulative distribution yields:
+
+$$ \ln \big\{ -\ln \left[ 1 - F(U) \right] \big\} ~=~ k\ln U ~-~ k\ln c $$
+
+By plotting $\ln \left[ 1 - F(U) \right]$ against $U$ using log-log scales (Rohatgi & Nelson, 1994), the gradient of the line provides a way to find parameter $k$, and $c$ is subsequently determined using the y-intercept. Least squares regression is used to perform the calculation to minimize errors (Trustum & Jayatilaka, 1979).
+
+It has often been shown that this method yields poor results. However, Deep et al. (2020) states that the poor results are due to a wrong definition of the cumulative probability density function. If $F(U_i)$ is actually the probability that a wind speed data value is less or equal to $U_i$, and $U_i$ is the value of wind speed at the upper edge (or middle value) of the histogram bar $i$. Then, we compare the linear relation $y_i ~=~ \text{gradient}.x_i + \text{y-intercept}$, with the following equation.
+
+$$ \ln \big\{ -\ln \left[ 1 - F(U_i) \right] \big\} ~=~ k\ln U_i ~-~ k\ln c $$
+
+Applying linear regression (Kenney & Keeping, 1962),
+
+$$ \text{gradient} ~=~ \frac{\sum_{i=1}^n x_i y_i ~-~ n\bar{x}\bar{y}}{\sum_{i=1}^n x_i^2 ~-~ n\bar{x}^2} $$
+
+$$ \text{y-intercept} ~=~ \frac{\bar{y}\sum_{i=1}^n x_i^2 ~-~ \bar{x}\sum_{i=1}^n x_i y_i}{\sum_{i=1}^n x_i^2 ~-~ n\bar{x}^2} $$
+
+
 _to be continued_
 
 
 ## References
 
+Deep, S., Sarkar, A., Ghawat, M., & Rajak, M. K. (2020). Estimation of the wind energy potential for coastal locations in India using the Weibull model. Renewable Energy, vol. 161, pp. 319–339, URL: [https://www.sciencedirect.com/science/article/pii/S0960148120311307](https://www.sciencedirect.com/science/article/pii/S0960148120311307).
+
 Justus, C. G., Hargraves, W. R., Mikhail, A., & Graber, D. (1978). Methods for Estimating Wind Speed Frequency Distributions. Journal of Applied Meteorology (1962-1982), vol. 17, 3, pp. 350–353, URL: [http://www.jstor.org/stable/26178009](http://www.jstor.org/stable/26178009).
 
+Kenney, J. F. & Keeping, E. S. (1962). Mathematics of Statistics, Part 1, 3rd Edition, chap. 15. Princeton, NJ: Van Nostrand.
+
+Lysen, E. H. (1983). Introduction to Wind Energy - CWD 82-1. Consultancy Services Wind Energy Developing Countries, Amersfoort, Netherlands.
+
 Manwell, J. F., McGowan, J. G., & Rogers, A. L. (2009). Wind Energy Explained, 2nd Edition. John Wiley & Sons, Ltd., West Sussex, United Kingdom, ISBN 9781119994367, doi:10.1002/9781119994367, URL: [https://onlinelibrary.wiley.com/doi/book/10.1002/9781119994367](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119994367).
+
+Rohatgi, J. S. & Nelson, V. (1994). Wind Characteristics: An Analysis for the Generation of Wind Power. Alternative Energy Institute, West Texas A&M University, Canyon, Texas, United States, ISBN 9780808714781.
+
+Trustrum, K. & Jayatilaka, A. D. S. (1979). On estimating the Weibull modulus for a brittle material. Journal of Materials Science, vol. 14, 5, pp. 1080–1084.
 
