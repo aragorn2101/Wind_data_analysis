@@ -54,7 +54,7 @@ Meteostat is a platform which regroups data from public domains. The difference 
 
 The approximation for k is given by (Justus et al., 1978). This method is also known as the standard deviation method.
 
-$$   k ~=~ \Bigg( \frac{\sigma_U}{\bar{U}} \Bigg)^{-1.086} $$
+$$ k ~=~ \Bigg( \frac{\sigma_U}{\bar{U}} \Bigg)^{-1.086} $$
 
 This gives good results for cases where k lies between 1 and 10 (Manwell et al., 2009). Then, c is found using the following equation,
 
@@ -82,9 +82,11 @@ Taking the logarithm of the cumulative distribution yields:
 
 By plotting $\ln \left[ 1 - F(U) \right]$ against $U$ using log-log scales (Rohatgi & Nelson, 1994), the gradient of the line provides a way to find parameter $k$, and $c$ is subsequently determined using the y-intercept. Least squares regression is used to perform the calculation to minimize errors (Trustum & Jayatilaka, 1979).
 
-It has often been shown that this method yields poor results. However, Deep et al. (2020) states that the poor results are due to a wrong definition of the cumulative probability density function. If $F(U_i)$ is actually the probability that a wind speed data value is less or equal to $U_i$, and $U_i$ is the value of wind speed at the upper edge (or middle value) of the histogram bar $i$. Then, we compare the linear relation $y_i ~=~ \text{gradient}.x_i + \text{y-intercept}$, with the following equation.
+It has often been shown that this method yields poor results. However, Deep et al. (2020) states that the poor results are due to a wrong definition of the cumulative probability density function. If $F(U_i)$ is actually the probability that a wind speed data value is less or equal to $U_i$, and $U_i$ is the value of wind speed at the upper edge (or middle value) of the histogram bar $i$. Then, we compare the linear relation $ y_i ~=~ \text{gradient}.x_i + \text{y-intercept} $, with the following equation.
 
-$$ \ln \big{ -\ln \left[ 1 - F(U_i) \right] \big} ~=~ k\ln U_i ~-~ k\ln c $$
+```math
+  \ln \left\{ -\ln \left[ 1 - F(U_i) \right] \right\} ~=~ k\ln U_i ~-~ k\ln c
+```
 
 Applying linear regression (Kenney & Keeping, 1962),
 
