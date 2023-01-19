@@ -47,80 +47,33 @@ Weather Underground is a platform conceived by a community of amateur meteorolog
 Meteostat is a platform which regroups data from public domains. The difference with Weather Underground is that Meteostat's sources are institutions which strictly abide by the norms set by the World Meteorological Organization. These sources include the National Oceanic and Atmospheric Administration (NOAA) of the United States, the Deutscher Wetterdienst of Germany and meteorological data from European Data Portal among many other sources. The platform is accessible through the webpage: [https://meteostat.net](https://meteostat.net), where long term data can be obtained for thousands of stations around the world.  Meteostat has two registered data sources for Mauritius. One station is in Plaisance and the other one in Vacoas. The Vacoas station only has data available from 2021 whereas the Plaisance station has data available from 2018 to date. The wind speed data obtained from the database are daily averages. We used only the data from the Plaisance station so that we complemented the IOS-net and Weather Underground data.
 
 
-## Parameter estimation techniques implemented for the Weibull approximations
+## Techniques implemented for estimating the Weibull parameters k and c
+
+Eight distinct methods are used to estimate the parameters $k$ and $c$
+characterizing the Weibull probability curve.
 
 
-### Empirical method or standard deviation method (EMJ)
-
-The approximation for k is given by (Justus et al., 1978). This method is also known as the standard deviation method.
-
-$$ k ~=~ \Bigg( \frac{\sigma_U}{\bar{U}} \Bigg)^{-1.086} $$
-
-This gives good results for cases where k lies between 1 and 10 (Manwell et al., 2009). Then, c is found using the following equation,
-
-$$ c ~=~ \frac{ \bar{U} }{ \Gamma \left( 1 + 1/k \right) } $$
-
-
-### Lysen empirical method (EML)
-
-In this empirical method $k$ is determined using the following equation, devised by Justus et al. (1978). Then, $c$ is calculated using an approximation for the gamma function giving rise to the following expression (Lysen, 1983):
-
-$$ \frac{c}{\bar{U}} ~=~ \Bigg( 0.568 ~+~ \frac{0.434}{k} \Bigg)^{ -\frac{1}{k} } $$
-
-
-### Graphical method or least squares method (GM)
-
-The _cumulative probability distribution_ corresponding to a particular Weibull function, characterized by parameters $k$ and $c$, is
-
-$$ F(U) ~=~ 1 ~-~ \exp\left[ -\left( \frac{U}{c} \right)^{k} \right] $$
-
-Taking the logarithm of the cumulative distribution yields:
-
-$$ \ln \left\{ -\ln \left[ 1 - F(U) \right] \right\} ~=~ k\ln U ~-~ k\ln c $$
-
-By plotting $\ln \left[ 1 - F(U) \right]$ against $U$ using log-log scales (Rohatgi & Nelson, 1994), the gradient of the line provides a way to find parameter $k$, and $c$ is subsequently determined using the y-intercept. Least squares regression is used to perform the calculation to minimize errors (Trustum & Jayatilaka, 1979).
-
-It has often been shown that this method yields poor results. However, Deep et al. (2020) states that the poor results are due to a wrong definition of the cumulative probability density function. If $F(U_i)$ is actually the probability that a wind speed data value is less or equal to $U_i$, and $U_i$ is the value of wind speed at the upper edge (or middle value) of the histogram bar $i$. Then, we compare the linear relation $y_i = \text{gradient}.x_i + \text{y-intercept}$, with the following equation.
-
-$$ \ln \left\{ -\ln \left[ 1 - F(U_i) \right] \right\} = k\ln U_i - k\ln c $$
-
-Applying linear regression (Kenney & Keeping, 1962),
-
-$$ \text{gradient} ~=~ \frac{ \sum_{i=1}^n x_i y_i ~-~ n \bar{x} \bar{y} }{ \sum_{i=1}^n x_i^2 ~-~ n \bar{x}^2 } $$
-
-$$ \text{y-intercept} ~=~ \frac{ \bar{y} \sum_{i=1}^n x_i^2 ~-~ \bar{x} \sum_{i=1}^n x_i y_i }{ \sum_{i=1}^n x_i^2 ~-~ n \bar{x}^2 } $$
-
-
-### Maximum likelihood method (ML)
-
-In this method parameters $k$ and $c$ are determined numerically by iterations ().
-
-$$ k = \Bigg[ \frac{ \sum_{i=1}^{n}  U_{i}^{k} \ln(U_i) }{ \sum_{i=1}^{n} U_{i}^{k} } - \frac{ \sum_{i=1}^{n} \ln(U_i) }{n} \Bigg]^{-1} $$
-
-$$ c = \Bigg( \frac{1}{n} \sum_{i=1}^{n} U_{i}^{k} \Bigg)^{ \frac{1}{k} } $$
-
-$U_i$ is the wind speed value at time stamp $i$ and $n$ is the number of non-zero wind speed data point.
-
-
-
-_to be continued_
+1. EMJ: Empirical method/standard deviation method (Justus et al., 1978)
+2. EML: Lysen empirical method (Lysen, 1983)
+3. GM: Graphical Method - midpoints (Rohatgi & Nelson, 1994) </br>
+   This method is actually computed twice using different values for the
+   probability predicted by the Weibull curve. One convention involved using
+   midpoints of the histogram bars while the other convention used the upper
+   edge of the bars.
+4. MLM: Maximum likelihood method (Stevens & Smulders, 1979)
+5. MMLM: Modified maximum likelihood method (Seguro & Lambert, 2000)
+6. MM: Method of moments (Bowden et al. 1983)
+7. PDM: Power density method (Akdag & Dinler, 2009)
+8. EPF: Energy pattern factor method (Akdag & Guler, 2015)
 
 
 ## References
 
-Deep, S., Sarkar, A., Ghawat, M., & Rajak, M. K. (2020). Estimation of the wind energy potential for coastal locations in India using the Weibull model. Renewable Energy, vol. 161, pp. 319–339, URL: [https://www.sciencedirect.com/science/article/pii/S0960148120311307](https://www.sciencedirect.com/science/article/pii/S0960148120311307).
-
 Justus, C. G., Hargraves, W. R., Mikhail, A., & Graber, D. (1978). Methods for Estimating Wind Speed Frequency Distributions. Journal of Applied Meteorology (1962-1982), vol. 17, 3, pp. 350–353, URL: [http://www.jstor.org/stable/26178009](http://www.jstor.org/stable/26178009).
-
-Kenney, J. F. & Keeping, E. S. (1962). Mathematics of Statistics, Part 1, 3rd Edition, chap. 15. Princeton, NJ: Van Nostrand.
 
 Lysen, E. H. (1983). Introduction to Wind Energy - CWD 82-1. Consultancy Services Wind Energy Developing Countries, Amersfoort, Netherlands.
 
-Manwell, J. F., McGowan, J. G., & Rogers, A. L. (2009). Wind Energy Explained, 2nd Edition. John Wiley & Sons, Ltd., West Sussex, United Kingdom, ISBN 9781119994367, doi:10.1002/9781119994367, URL: [https://onlinelibrary.wiley.com/doi/book/10.1002/9781119994367](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119994367).
-
 Rohatgi, J. S. & Nelson, V. (1994). Wind Characteristics: An Analysis for the Generation of Wind Power. Alternative Energy Institute, West Texas A&M University, Canyon, Texas, United States, ISBN 9780808714781.
-
-Trustrum, K. & Jayatilaka, A. D. S. (1979). On estimating the Weibull modulus for a brittle material. Journal of Materials Science, vol. 14, 5, pp. 1080–1084.
 
 Stevens, M. J. M. & Smulders, P. T. (1979). The Estimation of the Parameters of the Weibull Wind Speed Distribution for Wind Energy Utilization Purposes. Wind Engineering, vol. 3, 2, pp. 132–145, URL: [http://www.jstor.org/stable/43749134](http://www.jstor.org/stable/43749134).
 
