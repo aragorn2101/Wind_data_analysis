@@ -97,11 +97,11 @@ It has often been shown that this method yields poor results. However, Deep et a
 Applying linear regression (Kenney & Keeping, 1962),
 
 ```math
-  \text{gradient} ~=~ \frac{\sum_{i=1}^n x_i y_i ~-~ n\bar{x}\bar{y}}{\sum_{i=1}^n x_i^2 ~-~ n\bar{x}^2}
+  \text{gradient} ~=~ \frac{ \sum_{i=1}^n x_i y_i ~-~ n \bar{x} \bar{y} }{ \sum_{i=1}^n x_i^2 ~-~ n \bar{x}^2 }
 ```
 
 ```math
-  \text{y-intercept} ~=~ \frac{\bar{y}\sum_{i=1}^n x_i^2 ~-~ \bar{x}\sum_{i=1}^n x_i y_i}{\sum_{i=1}^n x_i^2 ~-~ n\bar{x}^2}
+  \text{y-intercept} ~=~ \frac{ \bar{y} \sum_{i=1}^n x_i^2 ~-~ \bar{x} \sum_{i=1}^n x_i y_i }{ \sum_{i=1}^n x_i^2 ~-~ n \bar{x}^2 }
 ```
 
 
