@@ -28,7 +28,9 @@ The following words in the script name briefly describe the tasks which the latt
 `..._calc_Weibull_diff.py` : this script calculates the Weibull approximations using the different parameter estimation methods. Then, the statistical difference between each curve obtained for every pair of parameters (k, c) is computed and printed out.
 
 
-## The IOS-net project data
+## Data sources
+
+### The IOS-net project data
 
 The Indian Ocean Solar network ([IOS-net](https://galilee.univ-reunion.fr)) project is a regional initiative, funded by the European Union, to establish a network of meteorological research and data sharing among the islands including and surround Reunion Island. The objectives of this project involve the assessment of renewable energy potential on the islands, the study of photovoltaic panels in their working environment, research on meteorological forecasting models for renewable energy applications, assessment of the impact of climate change on renewable resources, and adaptation to the impacts caused by climate change. The IOS-net project is also very valuable for the region as it encourages the sharing of information and collaboration between scientists and engineers of the Indian Ocean islands. An aspect of this initiative is the installation of weather stations on the islands and the sharing of the meteorological data freely via web services ([https://galilee.univ-reunion.fr/thredds/catalog.html](https://galilee.univ-reunion.fr/thredds/catalog.html)) and a mobile application.
 
@@ -37,14 +39,19 @@ There are four IOS-net weather stations installed on the territory of the Republ
 There are many other stations on the other Indian Ocean islands, on Reunion island, Madagascar and Seychelles. Check out the IOS-net website: [https://galilee.univ-reunion.fr](https://galilee.univ-reunion.fr) for more details.
 
 
-## Weather Underground
+### Weather Underground
 
 Weather Underground is a platform conceived by a community of amateur meteorologists who place the free sharing of data at the centre of their activities. They operate an open access website: [https://www.wunderground.com](https://www.wunderground.com). Anybody who possesses a weather station can register into the database, connect their device and upload data automatically. The website then constitutes a centralized platform where the data collected by thousands of independent weather stations around the world can be accessed. The equipment and protocols are more or less standardized to ensure a minimum of data quality. There are many weather stations in Mauritius which are registered with Weather Underground. There are two such stations quite close to Réduit. The closest one is at Bout du Monde, Ebène (code IPLAIN36: [https://www.wunderground.com/dashboard/pws/IPLAIN36](https://www.wunderground.com/dashboard/pws/IPLAIN36)). And, the other one is found at Quatres-Bornes (code IPLAINEW2: [https://www.wunderground.com/dashboard/pws/IPLAINEW2](https://www.wunderground.com/dashboard/pws/IPLAINEW2)). The data obtained from the database are daily averages.
 
 
-## Meteostat: Plaisance
+### Meteostat: Plaisance
 
 Meteostat is a platform which regroups data from public domains. The difference with Weather Underground is that Meteostat's sources are institutions which strictly abide by the norms set by the World Meteorological Organization. These sources include the National Oceanic and Atmospheric Administration (NOAA) of the United States, the Deutscher Wetterdienst of Germany and meteorological data from European Data Portal among many other sources. The platform is accessible through the webpage: [https://meteostat.net](https://meteostat.net), where long term data can be obtained for thousands of stations around the world.  Meteostat has two registered data sources for Mauritius. One station is in Plaisance and the other one in Vacoas. The Vacoas station only has data available from 2021 whereas the Plaisance station has data available from 2018 to date. The wind speed data obtained from the database are daily averages. We used only the data from the Plaisance station so that we complemented the IOS-net and Weather Underground data.
+
+
+### University of Mauritius Farm
+
+The Department of Physics at the University of Mauritius has a weather station at the Faculty of Agriculture's Farm. The wind speed is measured by a rotating vane anemometer. The data is averaged over intervals of 10 minutes.
 
 
 ## Techniques implemented for estimating the Weibull parameters k and c
@@ -69,11 +76,20 @@ characterizing the Weibull probability curve.
 
 ## References
 
-Justus, C. G., Hargraves, W. R., Mikhail, A., & Graber, D. (1978). Methods for Estimating Wind Speed Frequency Distributions. Journal of Applied Meteorology (1962-1982), vol. 17, 3, pp. 350–353, URL: [http://www.jstor.org/stable/26178009](http://www.jstor.org/stable/26178009).
+Akdağ, S. A. & Dinler, A. (2009). *A new method to estimate Weibull parameters for wind energy applications*. Energy Conversion and Management, vol. 50, 7, pp. 1761–1766, URL: [https://www.sciencedirect.com/science/article/pii/S0196890409000934](https://www.sciencedirect.com/science/article/pii/S0196890409000934).
 
-Lysen, E. H. (1983). Introduction to Wind Energy - CWD 82-1. Consultancy Services Wind Energy Developing Countries, Amersfoort, Netherlands.
+Akdağ, S. A. & Güler, O. (2015). *A novel energy pattern factor method for wind speed distribution parameter estimation*. Energy Conversion and Management, vol. 106, pp. 1124–1133, URL: [https://www.sciencedirect.com/science/article/pii/S0196890415009644](https://www.sciencedirect.com/science/article/pii/S0196890415009644).
 
-Rohatgi, J. S. & Nelson, V. (1994). Wind Characteristics: An Analysis for the Generation of Wind Power. Alternative Energy Institute, West Texas A&M University, Canyon, Texas, United States, ISBN 9780808714781.
+Bowden, G. J., Barker, P. R., Shestopal, V. O., & Twidell, J. W. (1983). *The Weibull Distribution Function and Wind Power Statistics*. Wind Engineering, vol. 7, 2, pp. 85–98, URL: [http://www.jstor.org/stable/43749036](http://www.jstor.org/stable/43749036).
 
-Stevens, M. J. M. & Smulders, P. T. (1979). The Estimation of the Parameters of the Weibull Wind Speed Distribution for Wind Energy Utilization Purposes. Wind Engineering, vol. 3, 2, pp. 132–145, URL: [http://www.jstor.org/stable/43749134](http://www.jstor.org/stable/43749134).
+Justus, C. G., Hargraves, W. R., Mikhail, A., & Graber, D. (1978). *Methods for Estimating Wind Speed Frequency Distributions*. Journal of Applied Meteorology (1962-1982), vol. 17, 3, pp. 350–353, URL: [http://www.jstor.org/stable/26178009](http://www.jstor.org/stable/26178009).
+
+Lysen, E. H. (1983). *Introduction to Wind Energy - CWD 82-1*. Consultancy Services Wind Energy Developing Countries, Amersfoort, Netherlands.
+
+Rohatgi, J. S. & Nelson, V. (1994). *Wind Characteristics: An Analysis for the Generation of Wind Power*. Alternative Energy Institute, West Texas A&M University, Canyon, Texas, United States, ISBN 9780808714781.
+
+Seguro, J. V. & Lambert, T. W. (2000). *Modern estimation of the parameters of the Weibull wind speed distribution for wind energy analysis*. Journal of Wind Engineering and Industrial Aerodynamics, vol. 85, 1, pp. 75–84, URL: [https://www.sciencedirect.com/science/article/pii/S0167610599001221](https://www.sciencedirect.com/science/article/pii/S0167610599001221).
+
+Stevens, M. J. M. & Smulders, P. T. (1979). *The Estimation of the Parameters of the Weibull Wind Speed Distribution for Wind Energy Utilization Purposes*. Wind Engineering, vol. 3, 2, pp. 132–145, URL: [http://www.jstor.org/stable/43749134](http://www.jstor.org/stable/43749134).
+
 
